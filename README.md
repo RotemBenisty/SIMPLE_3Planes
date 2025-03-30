@@ -1,7 +1,7 @@
 # SIMPLE_3Planes
 SIMPLE is a simultaneous multi-plane self-supervised learning method for isotropic MRI restoration from anisotropic data.
 
-#![image](figures/model_arch_with_loss.png)
+![image](figures/model_arch_with_loss.png)
 
 link for arxiv paper: https://www.arxiv.org/abs/2408.13065
 
@@ -23,7 +23,7 @@ Each row represents the cases for specific patient.
 The csv file should be located under SIMPLE directory.
 
 For example:
-#![image](figures/csv_file_example.png)
+![image](figures/csv_file_example.png)
 ## Training
 This project contains 2 models: ATME and SIMPLE.
 
