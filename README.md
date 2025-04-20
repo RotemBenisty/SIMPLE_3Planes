@@ -34,7 +34,11 @@ For both models you must specify the following base flags:
 
 --isTrain
 
+--main_root (main directory name for all models outputs)
+
 --model_root (directory name for model outputs)
+
+--eval_plane (evaluation plane)
 
 --csv_name (csv file name)
 
@@ -59,15 +63,15 @@ For both models you must specify the following base flags:
    Example:
 
    ```sh
-   python train.py atme --isTrain --plane=coronal --model_root=atme_coronal_output --csv_name=<file_name>.csv --vol_cube_dim=256 --calculate_dataset 
+   python train.py atme --isTrain --eval_plane=coronal --plane=axial --main_root=outputs --model_root=atme_axial_output --csv_name=<file_name>.csv --vol_cube_dim=256 --data_format=nifti --calculate_dataset 
    ```
 
-- For training SIMPLE, run 'train.py simple' command with the base flags and specify also the flag --planes_number (specify how many planes the model is based on).
+- For training SIMPLE, run 'train.py simple' command with the base flags and specify also the flags --planes (specify which planes the model is based on), --atme_cor_root/--atme_ax_root/--atme_sag_root (the coronal/axial/sagittal ATME outputs directory).
 
   Example:
 
    ```sh
-   python train.py simple --isTrain --planes_number=2 --model_root=simple_output --csv_name=<file_name>.csv --vol_cube_dim=256 --calculate_dataset 
+   python train.py simple --isTrain --eval_plane=coronal --planes=coronal,axial,sagittal --main_root=outputs --model_root=simple_output --csv_name=<file_name>.csv --vol_cube_dim=256 --calculate_dataset --atme_cor_root=atme_cor_output --atme_ax_root=atme_ax_output --atme_sag_root=atme_sag_output 
    ```
 
 ## Evaluation
@@ -78,7 +82,7 @@ For both models you must specify the following base flags:
    ```sh
    python test.py atme --plane=coronal --model_root=atme_coronal_output --csv_name=<file_name>.csv --vol_cube_dim=256
    ```
-- for evaluating SIMPLE, run 'test.py simple' command with the base flags and specify also the flag --planes_number (specify how many planes the model is based on).
+- for evaluating SIMPLE, run 'test.py simple' command with the base flags and specify also the flag --planes (specify which planes the model is based on), --atme_cor_root/--atme_ax_root/--atme_sag_root (the coronal/axial/sagittal ATME outputs directory).
    ```sh
    python test.py simple --planes_number=2 --model_root=simple_output --csv_name=<file_name>.csv --vol_cube_dim=256
    ```
