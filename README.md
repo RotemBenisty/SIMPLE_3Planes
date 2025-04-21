@@ -80,11 +80,11 @@ For both models you must specify the following base flags:
   Example:
 
    ```sh
-   python test.py atme --plane=coronal --model_root=atme_coronal_output --csv_name=<file_name>.csv --vol_cube_dim=512
+   python test.py atme --eval_plane=coronal --plane=axial --main_root=outputs --model_root=atme_coronal_output --csv_name=<file_name>.csv --vol_cube_dim=512 --data_format=nifti
    ```
 - for evaluating SIMPLE, run 'test.py simple' command with the base flags and specify also the flag --planes (specify which planes the model is based on), --atme_cor_root/--atme_ax_root/--atme_sag_root (the coronal/axial/sagittal ATME outputs directory).
    ```sh
-   python test.py simple --planes_number=2 --model_root=simple_output --csv_name=<file_name>.csv --vol_cube_dim=512
+   python test.py simple --eval_plane=coronal --planes=coronal,axial,sagittal --main_root=outputs --model_root=simple_output --csv_name=<file_name>.csv --vol_cube_dim=512 --data_format=nifti
    ```
 
 ## Pre-Trained Model
