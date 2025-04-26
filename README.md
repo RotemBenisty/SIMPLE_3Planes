@@ -71,7 +71,7 @@ For both models you must specify the following base flags:
   Example:
 
    ```sh
-   python train.py simple --isTrain --eval_plane=coronal --planes=coronal,axial,sagittal --main_root=outputs --model_root=simple_output --csv_name=<file_name>.csv --vol_cube_dim=512 --calculate_dataset --atme_cor_root=atme_coronal_output --atme_ax_root=atme_axial_output --atme_sag_root=atme_sagittal_output 
+   python train.py simple --isTrain --eval_plane=coronal --planes=coronal,axial,sagittal --main_root=outputs --model_root=simple_output --csv_name=<file_name>.csv --vol_cube_dim=512 --calculate_dataset --atme_cor_root=atme_coronal_output --atme_ax_root=atme_axial_output --atme_sag_root=atme_sagittal_output --data_format=nifti 
    ```
 
 ## Evaluation
