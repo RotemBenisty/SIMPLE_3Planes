@@ -48,7 +48,7 @@ For both models you must specify the following base flags:
 
 --phase (train/test)
 
---vol_cube_dim (the dimension of the resulted cube MRI volume - can be any value above 256). *Pay attention that different cube dimension may require different number of discriminator layers for ATME training (for example: 256 require 3 discriminator layers, 512 require 4 discriminator layers)
+--vol_cube_dim (the dimension of the resulted cube MRI volume - can be any value above 256). *Pay attention that different cube dimension may require different number of discriminator layers (--n_layers_D) for ATME training (for example: 256 require 3 discriminator layers, 512 require 4 discriminator layers)
 
 --calculate_dataset or --no-calculate_dataset (whether to perform pre-processing for the dataset or not. Data pre-processing must be done before the training).
 
@@ -80,7 +80,7 @@ For both models you must specify the following base flags:
   Example:
 
    ```sh
-   python test.py atme --eval_plane=coronal --plane=axial --main_root=outputs --model_root=atme_coronal_output --csv_name=<file_name>.csv --vol_cube_dim=512 --data_format=nifti
+   python test.py atme --eval_plane=coronal --plane=axial --main_root=outputs --model_root=atme_axial_output --csv_name=<file_name>.csv --vol_cube_dim=512 --data_format=nifti
    ```
 - for evaluating SIMPLE, run 'test.py simple' command with the base flags and specify also the flag --planes (specify which planes the model is based on), --atme_cor_root/--atme_ax_root/--atme_sag_root (the coronal/axial/sagittal ATME outputs directory).
    ```sh
